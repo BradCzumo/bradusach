@@ -520,10 +520,15 @@ a:active {
 5.2 Menus
 --------------------------------------------------------------*/
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+		position: relative;
+		float:left;
+		width: 100%;
+		display: block;
+		clear: both;
+		font-family: 'Lato', sans-serif;
+		text-transform: uppercase;
+		background: #313131;
+		background: hsl(o, 0%, 19%);
 }
 
 .main-navigation ul {
@@ -539,16 +544,24 @@ a:active {
 
 .main-navigation a {
 	display: block;
+	padding: 1.3em 1em;
+	font-size: 14px;
+	font-size: 1.4rem;
 	text-decoration: none;
+	line-height: 1.3em;
+	color: white;
+	color: hsl(0, 0%, 100%);
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 1.5em;
-	left: -999em;
+	position: absoulute;
+	left: 0;
 	z-index: 99999;
+	display: none;
+	float: left;
+	padding: 0;
+	background: #4d4d4d;
+	background: hsl(0, 0%, 30%);
 }
 
 .main-navigation ul ul ul {
