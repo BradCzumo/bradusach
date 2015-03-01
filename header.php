@@ -35,7 +35,13 @@
 	</div>
 	<?php endif; // End header image check. ?>
 	
-		<div class="site-branding" style= 'background-image: url(<?php header_image(); ?>)'>
+		<?php 
+    if ( get_header_image() && !('blank' == get_header_textcolor()) ) { 
+        echo '<div class="site-branding header-background-image" style="background-image: url(' . get_header_image() . ')">'; 
+    } else {
+        echo '<div class="site-branding">';
+    }
+?>
 		<div class="title-box">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
@@ -49,3 +55,5 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+	
+	

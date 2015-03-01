@@ -759,6 +759,18 @@ X.X Header
 display:block;
 margin:0 auto;
 }
+
+.header-background-image {
+    background: no-repeat center;
+    background-size: cover!important;
+    -moz-background-size: cover!important;
+    -webkit-background-size: cover!important;
+}
+
+.header-background-image .title-box {
+    background: #333;
+    background: hsla(0, 0%, 0%, .7);
+}    
 .site-branding {
     padding: 6rem 0;
     text-align: center;
