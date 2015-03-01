@@ -578,12 +578,22 @@ a:active {
 }
 
 .main-navigation li:hover > a {
+	color: fff;
+	color: hsl(0, 0%, 100%);
+	background: 4d4d4d;
+	background: hsl(0, 0%, 30%)
+
 }
 
 .main-navigation ul ul :hover > a {
+
 }
 
 .main-navigation ul ul a:hover {
+	background: #313131;
+	background: hsl (0, 0%, 19%);
+
+
 }
 
 .main-navigation ul li:hover > ul {
@@ -596,6 +606,26 @@ a:active {
 
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
+.main-navigation .current_page_item > a:hover,
+.main-navigation .current-menu-item > a:hover {
+	background:white;
+	color: #313131;
+	color: hsl(0, 0%, 19%);
+}
+
+.main-navigation .current_page_ancestor {
+	background: #4d4d4d;
+	background: hsl(0, 0%, 30%);
+}
+
+
+.main-navigation .current_page_parent .current_page_item > a {
+	color:#fff;
+	color: hsl(0, 0%, 100%);
+	background: #313131;
+	background: hsl(0, 0%, 19%);
+}
+
 .main-navigation .current_page_ancestor > a {
 }
 
