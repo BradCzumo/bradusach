@@ -22,6 +22,9 @@
  * @uses bradusach_admin_header_style()
  * @uses bradusach_admin_header_image()
  */
+ /*
+ made changes in order for our header background to fit on large webpage
+ */
 function bradusach_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'bradusach_custom_header_args', array(
 		'default-image'          => '',

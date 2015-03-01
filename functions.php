@@ -115,7 +115,7 @@ function bradusach_scripts() {
 add_action( 'wp_enqueue_scripts', 'bradusach_scripts' );
 
 /**
- * Implement the Custom Header feature.
+ * Implement the Custom Header feature. we had to enable this to have a cutom header image!
  */
 require get_template_directory() . '/inc/custom-header.php';
 

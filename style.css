@@ -754,7 +754,11 @@ a:active {
 /*--------------------------------------------------------------
 X.X Header
 --------------------------------------------------------------*/
-
+/*
+this section was custom made in order for out header image and header title to coexist
+this code allows out responsive design to exist over top our header image for stylistic 
+purposes
+*/
 .header-image img{
 display:block;
 margin:0 auto;
@@ -806,7 +810,8 @@ margin:0 auto;
     color: #fff;
     color: hsl(0, 0%, 100%);
 }
-/* Header responsive */
+/* Header responsive. this is where out title header box adjusts to 600 pixels the smallest 
+screen size we adjusted for */
 @media screen and (max-width: 600px) {
     .site-branding { padding: 0; }
     

@@ -2,7 +2,10 @@
 Theme Name: bradusach
 Layout: Content-Sidebar
 */
-
+/*
+this code solved issues with sidebar when we made changes to our webpage to be more
+responsive. essentially, formats our content in an optimal way. 
+*/
 .content-area {
 width:100%
 	float: left;

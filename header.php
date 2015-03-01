@@ -34,7 +34,8 @@
 	</a>
 	</div>
 	<?php endif; // End header image check. ?>
-	
+<!-- this is our fail save in the case we do not use a background header, the format
+of the website will use the existing background styling to take its place-->
 		<?php 
     if ( get_header_image() && !('blank' == get_header_textcolor()) ) { 
         echo '<div class="site-branding header-background-image" style="background-image: url(' . get_header_image() . ')">'; 
