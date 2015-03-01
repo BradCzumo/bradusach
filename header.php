@@ -15,6 +15,9 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
+
+<div class="headerslider"> <?php echo do_shortcode('[sp_responsiveslider limit="-1"]'); ?></div>
+
 </head>
 
 <body <?php body_class(); ?>>
