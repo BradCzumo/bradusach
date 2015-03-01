@@ -46,7 +46,7 @@ function bradusach_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -70,10 +70,10 @@ function bradusach_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'bradusach_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+// 	add_theme_support( 'custom-background', apply_filters( 'bradusach_custom_background_args', array(
+// 		'default-color' => 'ffffff',
+// 		'default-image' => '',
+// 	) ) );
 }
 endif; // bradusach_setup
 add_action( 'after_setup_theme', 'bradusach_setup' );
@@ -101,6 +101,8 @@ add_action( 'widgets_init', 'bradusach_widgets_init' );
  */
 function bradusach_scripts() {
 	wp_enqueue_style( 'bradusach-style', get_stylesheet_uri() );
+	
+	wp_enqueue_style( 'bradusach-content-sidebar', get_template_directory_uri() . '/layout/content-sidebar.css' );
 
 	wp_enqueue_script( 'bradusach-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -115,7 +117,7 @@ add_action( 'wp_enqueue_scripts', 'bradusach_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-//require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.

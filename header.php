@@ -22,9 +22,24 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'bradusach' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
+	
+	<!-- If there is an image set up a link and display header image if clicked, 
+	take to front of the site THIS IS REALLY COOL! and took some time to figure out...
+	 conditional statement-->
+	
+	<?php if ( get_header_image() && ('blank' == get_header_textcolor() ) ) : ?>
+	<div class="header-image">
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+		<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+	</a>
+	</div>
+	<?php endif; // End header image check. ?>
+	
+		<div class="site-branding" style= 'background-image: url(<?php header_image(); ?>)'>
+		<div class="title-box">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			</div>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">

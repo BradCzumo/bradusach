@@ -709,6 +709,62 @@ a:active {
 }
 
 /*--------------------------------------------------------------
+X.X Header
+--------------------------------------------------------------*/
+
+.header-image img{
+display:block;
+margin:0 auto;
+}
+.site-branding {
+    padding: 6rem 0;
+    text-align: center;
+    background: #2c86ba;
+    background: hsl(202, 62%, 45%);
+}
+
+.title-box {
+    width: 600px;
+    max-width: 75%;
+    padding: 4rem;
+    margin: 0 auto;
+    border: solid 1px #fff;
+    border: solid 1px hsla(0, 0%, 100%, .3);
+}
+     
+.site-title {
+    font-weight: 700;
+    font-size: 40px;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    line-height: normal;
+    padding-bottom: 1rem;
+}
+
+.site-description {
+    font-weight: 100;
+    font-size: 20px;
+    font-size: 2rem;
+}
+.site-title a,
+.site-description { 
+    color: #fff;
+    color: hsl(0, 0%, 100%);
+}
+/* Header responsive */
+@media screen and (max-width: 600px) {
+    .site-branding { padding: 0; }
+    
+    .title-box {
+        max-width: 100%;
+        margin: 0;
+        padding: 4rem;
+        border: none;
+    }
+}
+
+
+/*--------------------------------------------------------------
 9.0 Widgets
 --------------------------------------------------------------*/
 .widget {
