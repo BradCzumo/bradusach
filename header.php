@@ -9,6 +9,7 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -16,7 +17,7 @@
 
 <?php wp_head(); ?>
 
-<div class="headerslider"> <?php echo do_shortcode('[sp_responsiveslider limit="-1"]'); ?></div>
+
 
 </head>
 
@@ -45,6 +46,9 @@ of the website will use the existing background styling to take its place-->
     } else {
         echo '<div class="site-branding">';
     }
+    
+  
+    
 ?>
 		<div class="title-box">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -55,6 +59,7 @@ of the website will use the existing background styling to take its place-->
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'bradusach' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<?php bradusach_social_menu(); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

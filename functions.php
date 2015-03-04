@@ -51,6 +51,7 @@ function bradusach_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'bradusach' ),
+		'social' => __ ( 'social menu', 'bradusach'),
 	) );
 
 	/*
@@ -101,6 +102,10 @@ add_action( 'widgets_init', 'bradusach_widgets_init' );
  */
 function bradusach_scripts() {
 	wp_enqueue_style( 'bradusach-style', get_stylesheet_uri() );
+	
+	wp_enqueue_style( 'bradusach-google-fonts', 'http://fonts.googleapis.com/css?family=Lato:300,400|PT+Serif|Maven+Pro:400,700' );
+	
+	wp_enqueue_style( 'bradusach-fontawesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
 	
 	wp_enqueue_style( 'bradusach-content-sidebar', get_template_directory_uri() . '/layout/content-sidebar.css' );
 
