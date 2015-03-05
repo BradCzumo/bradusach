@@ -20,6 +20,12 @@ get_header(); ?>
 
 					<?php get_search_form(); ?>
 
+<?php
+/**
+* code calls and displays search form using search.php Theme file. 
+*/
+
+?>
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
 					<?php if ( bradusach_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>

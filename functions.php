@@ -106,10 +106,21 @@ function bradusach_scripts() {
 	
 	wp_enqueue_style( 'bradusach-content-sidebar', get_template_directory_uri() . '/layouts/content-sidebar.css' );
 	
+	/**
+ * enques the sidebar widget that includes the calendar and recent posts. takes css stylign from content sidebare.css
+ */	
+	
 	wp_enqueue_style( 'bradusach-google-fonts', 'https://fonts.googleapis.com/css?family=Lato:300,400|PT+Serif|Maven+Pro:400,700' );
+	
+	/**
+ * allows us to use google fonts, lato font family
+ */	
 	
 	wp_enqueue_style( 'bradusach-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
 
+/**
+ * enques the font family combinations we selected on google fonts
+ */	
 	wp_enqueue_script( 'bradusach-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'bradusach-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
