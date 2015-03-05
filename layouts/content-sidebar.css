@@ -19,6 +19,7 @@ width:100%
 .site-content .widget-area {
 width: 380px;
 float: right;
+margin-top: -320px;
 padding:4rem;
 	background: #fff;
 	background: hsl(0, 0%, 100%);
