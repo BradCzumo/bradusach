@@ -98,16 +98,17 @@ function bradusach_widgets_init() {
 add_action( 'widgets_init', 'bradusach_widgets_init' );
 
 /**
- * Enqueue scripts and styles. Including the addition of googlefonts, and images from fontawesome
+ * Enqueue scripts and styles. Allows googlefont and fontawesome to be used
  */
 function bradusach_scripts() {
+
 	wp_enqueue_style( 'bradusach-style', get_stylesheet_uri() );
+	
+	wp_enqueue_style( 'bradusach-content-sidebar', get_template_directory_uri() . '/layouts/content-sidebar.css' );
 	
 	wp_enqueue_style( 'bradusach-google-fonts', 'https://fonts.googleapis.com/css?family=Lato:300,400|PT+Serif|Maven+Pro:400,700' );
 	
 	wp_enqueue_style( 'bradusach-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
-	
-	wp_enqueue_style( 'bradusach-content-sidebar', get_template_directory_uri() . '/layout/content-sidebar.css' );
 
 	wp_enqueue_script( 'bradusach-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -143,3 +144,5 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+include (TEMPLATEPATH . '/myGallery/gallery_functions_include.php');

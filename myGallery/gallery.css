@@ -1,0 +1,12 @@
+/* CSS Document */
+
+.gallery .gallery-icon a img { width:90px !important; height:90px !important; }
+
+.gallery .wp-caption-text { display:none !important; }
+
+/* will only affect the breaks after gallery. set to none
+
+*/
+.gallery > br {display:none;}
+
+.gallery .gallery-item { margin: 0px 5px 5px 0px !important; width: auto !important; }
