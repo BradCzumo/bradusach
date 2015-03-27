@@ -91,7 +91,7 @@ function bds__settings_init(  ) {
 
 
 }
-
+//if image 1 url exists push it out to be echoed
 function bds__text_field_0_render() { 
 	$options = get_option( 'bds__settings' );
 	?>
@@ -99,25 +99,28 @@ function bds__text_field_0_render() {
 	<?php
 }
 
-
+//if image 2 url exists push it out to be echoed
 function bds__text_field_1_render() { 
 	$options = get_option( 'bds__settings' );
 	?>
 	<input type="text" name="bds__settings[bds__text_field_1]" value="<?php if (isset($options['bds__text_field_1'])) echo $options['bds__text_field_1']; ?>">
 	<?php
 }
+//if image 3 url exists push it out to be echoed
 function bds__text_field_2_render() { 
 	$options = get_option( 'bds__settings' );
 	?>
 	<input type="text" name="bds__settings[bds__text_field_2]" value="<?php if (isset($options['bds__text_field_2'])) echo $options['bds__text_field_2']; ?>">
 	<?php
 }
+//if image 4 url exists push it out to be echoed
 function bds__text_field_3_render() { 
 	$options = get_option( 'bds__settings' );
 	?>
 	<input type="text" name="bds__settings[bds__text_field_3]" value="<?php if (isset($options['bds__text_field_3'])) echo $options['bds__text_field_3']; ?>">
 	<?php
 }
+//if image 5 url exists push it out to be echoed
 function bds__text_field_4_render() { 
 	$options = get_option( 'bds__settings' );
 	?>
@@ -126,7 +129,7 @@ function bds__text_field_4_render() {
 }
 
 
-
+//if radio button is selected push to be enlarged
 function bds__radio_field_2_render() { 
 	$options = get_option( 'bds__settings' );
 	?>
@@ -137,7 +140,7 @@ function bds__radio_field_2_render() {
 
 
 
-
+//colour selection button, if selected push to be called and executed
 function bds__select_field_4_render() { 
 	$options = get_option( 'bds__settings' );
 	?>
@@ -148,12 +151,12 @@ function bds__select_field_4_render() {
 <?php
 }
 
-
+//backend user interface, only visible to admin to insturct on use of plugin
 function bds__settings_section_callback() { 
 	echo __( 'Choose the Prefered image that will be the thumbnail and selected, <br> Edit custom colors as well </br>', 'bradusach' );
 }
 
-
+//temporary options select option
 function my__plugin_options_page() { 
 	?>
 	<form action="options.php" method="post">
@@ -170,7 +173,7 @@ function my__plugin_options_page() {
 	<?php
 
 }
-
+// settings and admin menu
 add_action( 'admin_menu', 'bds__add_admin_menu' );
 add_action( 'admin_init', 'bds__settings_init' );	
 
@@ -185,6 +188,7 @@ function my__plugin_callit(){
 		$selected_radio = $_POST['testname'];
 		echo '<img src="' . $selected_radio . '" width="700" />';
 	}
+	//front end echos, instructions to website visitors on how to interact with plugin
 	else {
 		echo 'Please select an image to enlarge';
 	}
@@ -203,7 +207,7 @@ function my__plugin_callit(){
 	echo '<br />';
 	echo '<input type="radio" name="testname" value="' . $options['bds__text_field_0'] . '">';
 	echo '</div>';
-	
+	//size restrictions 200x200
 	
 	echo '<div style="float: left;">';
 	echo '<img src="' . $options['bds__text_field_1'] . '" class="image-choose" width="200" height="200" />';
@@ -231,12 +235,12 @@ function my__plugin_callit(){
 	
 	
 	echo '<br />';
-	
+	//select button name, change to enlarge for further usability and better user understanding
 	
 	echo '<input type="submit" name="dlsubmit" value="Enlarge">';
 	
 	echo '</form>';
-	
+	//display radio functionality
 	
 	echo '<p>Radio: ' . $options['bds__radio_field_2'] . '</p>';
 	
