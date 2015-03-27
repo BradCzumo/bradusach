@@ -9,8 +9,8 @@
  */
 
 
-function plugin_on_pages_shortcode(){
-	include(test.php);
+function plugin_on_page(){
+return my__plugin_callit();
 }
 
 
@@ -240,7 +240,7 @@ function my__plugin_callit(){
 
 }	
 
-add_filter('the_content', 'my__plugin_callit');	
+//add_filter('the_content', 'my__plugin_callit');	
 add_action( 'wp_enqueue_scripts', 'enlarger_scripts' );
 add_shortcode( 'plugin_on_pages', 'plugin_on_page' );
 
