@@ -9,12 +9,16 @@
  */
 
 
+function plugin_on_pages_shortcode(){
+	include(test.php);
+}
+
 
 /**
  * Enqueue scripts and styles
  */
-function tester_scripts() {
-    wp_enqueue_style( 'core', 'https://phoenix.sheridanc.on.ca/~ccit2639/wp-content/plugins/tester/style.css', false ); 
+function enlarger_scripts() {
+    wp_enqueue_style( 'core', 'https://phoenix.sheridanc.on.ca/~ccit2639/wp-content/plugins/enlarger/style.css', false ); 
 }
 
 
@@ -237,7 +241,8 @@ function my__plugin_callit(){
 }	
 
 add_filter('the_content', 'my__plugin_callit');	
-add_action( 'wp_enqueue_scripts', 'tester_scripts' );
+add_action( 'wp_enqueue_scripts', 'enlarger_scripts' );
+add_shortcode( 'plugin_on_pages', 'plugin_on_page' );
 
 
 ?>
