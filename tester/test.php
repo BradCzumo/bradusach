@@ -34,6 +34,14 @@ function cd_awesome_settings_init(  ) {
 		'plugin_page', 
 		'cd_awesome_plugin_page_section' 
 	);
+	
+	add_settings_field( 
+		'cd_awesome_text_field_1', 
+		__( 'Enter content into the text box', 'codediva' ), 
+		'cd_awesome_text_field_1_render', 
+		'plugin_page', 
+		'cd_awesome_plugin_page_section' 
+	);
 
 	add_settings_field( 
 		'cd_awesome_checkbox_field_1', 
@@ -77,6 +85,13 @@ function cd_awesome_text_field_0_render() {
 	<?php
 }
 
+
+function cd_awesome_text_field_1_render() { 
+	$options = get_option( 'cd_awesome_settings' );
+	?>
+	<input type="text" name="cd_awesome_settings[cd_awesome_text_field_1]" value="<?php if (isset($options['cd_awesome_text_field_1'])) echo $options['cd_awesome_text_field_1']; ?>">
+	<?php
+}
 
 function cd_awesome_checkbox_field_1_render() { 
 	$options = get_option( 'cd_awesome_settings' );
@@ -144,15 +159,43 @@ add_action( 'admin_init', 'cd_awesome_settings_init' );
 
 function my_awesome_plugin_callit(){
 	$options = get_option( 'cd_awesome_settings' );
-	echo '<style>.image-choose:hover { width: 400px; }</style>';
-	echo '<form action="process.php">';
+	echo '<style>.image-choose:hover { width: 300px; }</style>';
+	
+	echo '<div style="border: 1px solid black; width: 50%;">';
+	if (isset($_POST['testname'])) {
+		$selected_radio = $_POST['testname'];
+		echo '<img src="' . $selected_radio . '" width="700" />';
+	}
+	else {
+		echo 'Please select an image to enlarge';
+	}
+
+	echo '<br />';
+	echo '</div>';
+	
+	
+	echo '<form method="post">';
+	
+	echo '<div style="float: left;">';
 	echo '<img src="' . $options['cd_awesome_text_field_0'] . '" class="image-choose" width="200" height="200" />';
 	echo '<br />';
-	echo '<input type="radio" name="testname">';
+	echo '<input type="radio" name="testname" value="' . $options['cd_awesome_text_field_0'] . '">';
+	echo '</div>';
+	
+	
+	echo '<div style="float: left;">';
+	echo '<img src="' . $options['cd_awesome_text_field_1'] . '" class="image-choose" width="200" height="200" />';
 	echo '<br />';
-	echo '<input type="submit" name="dlsubmit" value="Download">';
+	echo '<input type="radio" name="testname" value="' . $options['cd_awesome_text_field_1'] . '">';
+	echo '</div>';
+	
+	
+	echo '<br />';
+	
+	
+	echo '<input type="submit" name="dlsubmit" value="Enlarge">';
 	echo '</form>';
-
+	
 	
 	echo '<p>Checkbox: ' . $options['cd_awesome_checkbox_field_1'] . '</p>';
 	echo '<p>Radio: ' . $options['cd_awesome_radio_field_2'] . '</p>';
