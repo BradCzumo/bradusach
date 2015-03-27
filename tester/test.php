@@ -144,10 +144,11 @@ add_action( 'admin_init', 'cd_awesome_settings_init' );
 
 function my_awesome_plugin_callit(){
 	$options = get_option( 'cd_awesome_settings' );
+	echo '<style>.image-choose:hover { width: 400px; }</style>';
 	echo '<form action="process.php">';
-	echo '<img src="' . $options['cd_awesome_text_field_0'] . '" width="200" height="200" />';
+	echo '<img src="' . $options['cd_awesome_text_field_0'] . '" class="image-choose" width="200" height="200" />';
 	echo '<br />';
-	echo '<input type="checkbox" name="testname">';
+	echo '<input type="radio" name="testname">';
 	echo '<br />';
 	echo '<input type="submit" name="dlsubmit" value="Download">';
 	echo '</form>';
