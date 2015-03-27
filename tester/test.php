@@ -8,16 +8,19 @@
  * Author URI: http://phoenix.sheridanc.on.ca/~ccit2639
  */
 
-
+// adds our admin panel to the backend, we can also set our dashicon ! :) external is an
+//icon that resembles an image being enlarged or moved, which is why we used it. 
 function bds__add_admin_menu(  ) { 
 
-	add_menu_page( 'Image Enlarger', 'Image Enlarger', 'manage_options', 'my__plugin', 'my__plugin_options_page', 'dashicons-hammer', 66 );
+	add_menu_page( 'Image Enlarger', 'Image Enlarger', 'manage_options', 'my__plugin', 'my__plugin_options_page', 'dashicons-external', 66 );
 
 }
 
-
+//Declare our image urls that we will be using in our enlargment gallery. on the backend
+//this is where you would place each url, and set the colour of the enlarge button
+//radio button functionality also starts here. 
 function bds__settings_init(  ) { 
-
+//registers our settings page in back end
 	register_setting( 'plugin_page', 'bds__settings' );
 	
 	add_settings_section(
@@ -26,7 +29,7 @@ function bds__settings_init(  ) {
 		'bds__settings_section_callback', 
 		'plugin_page'
 	);
-
+//image url render box 1
 	add_settings_field( 
 		'bds__text_field_0', 
 		__( 'Image 1 URL', 'bradusach' ), 
@@ -34,7 +37,7 @@ function bds__settings_init(  ) {
 		'plugin_page', 
 		'bds__plugin_page_section' 
 	);
-	
+	//image url render box 2
 	add_settings_field( 
 		'bds__text_field_1', 
 		__( 'Image 2 URL', 'bradusach' ), 
@@ -42,7 +45,7 @@ function bds__settings_init(  ) {
 		'plugin_page', 
 		'bds__plugin_page_section' 
 	);
-
+//image url render box 3
 	add_settings_field( 
 		'bds__text_field_2', 
 		__( 'Image 3 URL', 'bradusach' ), 
@@ -50,7 +53,7 @@ function bds__settings_init(  ) {
 		'plugin_page', 
 		'bds__plugin_page_section' 
 	);	
-
+//image url render box 4
 	add_settings_field( 
 		'bds__text_field_3', 
 		__( 'Image 4 URL', 'bradusach' ), 
@@ -58,7 +61,7 @@ function bds__settings_init(  ) {
 		'plugin_page', 
 		'bds__plugin_page_section' 
 	);	
-
+//image url render box 5
 	add_settings_field( 
 		'bds__text_field_4', 
 		__( 'Image 5 URL', 'bradusach' ), 
@@ -67,7 +70,7 @@ function bds__settings_init(  ) {
 		'bds__plugin_page_section' 
 	);		
 
-
+//radio button functionality in back end
 	add_settings_field( 
 		'bds__radio_field_2', 
 		__( 'Choose an option', 'bradusach' ), 
@@ -77,7 +80,7 @@ function bds__settings_init(  ) {
 	);
 
 
-
+// colour select option for backend
 	add_settings_field( 
 		'bds__select_field_4', 
 		__( 'Select a Color', 'bradusach' ), 
