@@ -151,6 +151,7 @@ function my_awesome_plugin_callit(){
 	echo '<br />';
 	echo '<input type="submit" name="dlsubmit" value="Download">';
 	echo '</form>';
+
 	
 	echo '<p>Checkbox: ' . $options['cd_awesome_checkbox_field_1'] . '</p>';
 	echo '<p>Radio: ' . $options['cd_awesome_radio_field_2'] . '</p>';
