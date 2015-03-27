@@ -8,6 +8,16 @@
  * Author URI: http://phoenix.sheridanc.on.ca/~ccit2639
  */
 
+
+
+/**
+ * Enqueue scripts and styles
+ */
+function tester_scripts() {
+    wp_enqueue_style( 'core', 'https://phoenix.sheridanc.on.ca/~ccit2639/wp-content/plugins/tester/style.css', false ); 
+}
+
+
 // adds our admin panel to the backend, we can also set our dashicon ! :) external is an
 //icon that resembles an image being enlarged or moved, which is why we used it. 
 function bds__add_admin_menu(  ) { 
@@ -70,24 +80,6 @@ function bds__settings_init(  ) {
 		'bds__plugin_page_section' 
 	);		
 
-//radio button functionality in back end
-	add_settings_field( 
-		'bds__radio_field_2', 
-		__( 'Choose an option', 'bradusach' ), 
-		'bds__radio_field_2_render', 
-		'plugin_page', 
-		'bds__plugin_page_section' 
-	);
-
-
-// colour select option for backend
-	add_settings_field( 
-		'bds__select_field_4', 
-		__( 'Select a Color', 'bradusach' ), 
-		'bds__select_field_4_render', 
-		'plugin_page', 
-		'bds__plugin_page_section' 
-	);
 
 
 }
@@ -181,12 +173,10 @@ add_action( 'admin_init', 'bds__settings_init' );
 
 function my__plugin_callit(){
 	$options = get_option( 'bds__settings' );
-	// Black border around the text box around the image, echoing out the Http to make it
-	echo '<div style="border: 1px solid black; width: 50%;">';
 	// If then for when the radio button from the back end is checked off, the image and selected will enlarge  to the size of 700
 	if (isset($_POST['testname'])) {
 		$selected_radio = $_POST['testname'];
-		echo '<img src="' . $selected_radio . '" width="700" />';
+		echo '<img src="' . $selected_radio . '" width="995" />';
 	}
 	//front end echos, instructions to website visitors on how to interact with plugin
 	else {
@@ -202,33 +192,33 @@ function my__plugin_callit(){
 	/*beginning of echoing out all the text fields that are defined in the back end. This will call them on the 
 	front end to the image the user has chosen
 	*/
+	
 	echo '<div style="float: left;">';
-	echo '<img src="' . $options['bds__text_field_0'] . '" class="image-choose" width="200" height="200" />';
+	echo '<img src="' . $options['bds__text_field_0'] . '" class="image-choose0" />';
 	echo '<br />';
 	echo '<input type="radio" name="testname" value="' . $options['bds__text_field_0'] . '">';
 	echo '</div>';
-	//size restrictions 200x200
 	
 	echo '<div style="float: left;">';
-	echo '<img src="' . $options['bds__text_field_1'] . '" class="image-choose" width="200" height="200" />';
+	echo '<img src="' . $options['bds__text_field_1'] . '" class="image-choose1" />';
 	echo '<br />';
 	echo '<input type="radio" name="testname" value="' . $options['bds__text_field_1'] . '">';
 	echo '</div>';
 	
 	echo '<div style="float: left;">';
-	echo '<img src="' . $options['bds__text_field_2'] . '" class="image-choose" width="200" height="200" />';
+	echo '<img src="' . $options['bds__text_field_2'] . '" class="image-choose2"/>';
 	echo '<br />';
 	echo '<input type="radio" name="testname" value="' . $options['bds__text_field_2'] . '">';
 	echo '</div>';
 	
 	echo '<div style="float: left;">';
-	echo '<img src="' . $options['bds__text_field_3'] . '" class="image-choose" width="200" height="200" />';
+	echo '<img src="' . $options['bds__text_field_3'] . '" class="image-choose3" />';
 	echo '<br />';
 	echo '<input type="radio" name="testname" value="' . $options['bds__text_field_3'] . '">';
 	echo '</div>';
 
 	echo '<div style="float: left;">';
-	echo '<img src="' . $options['bds__text_field_4'] . '" class="image-choose" width="200" height="200" />';
+	echo '<img src="' . $options['bds__text_field_4'] . '" class="image-choose4" />';
 	echo '<br />';
 	echo '<input type="radio" name="testname" value="' . $options['bds__text_field_4'] . '">';
 	echo '</div>';
@@ -241,13 +231,13 @@ function my__plugin_callit(){
 	
 	echo '</form>';
 	//display radio functionality
-	
-	echo '<p>Radio: ' . $options['bds__radio_field_2'] . '</p>';
+
 	
 
 }	
 
 add_filter('the_content', 'my__plugin_callit');	
+add_action( 'wp_enqueue_scripts', 'tester_scripts' );
 
 
 ?>
